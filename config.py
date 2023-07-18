@@ -1,5 +1,5 @@
 import asyncio
-TOKEN_API = '6322175401:AAEFXOVrIy63gVgwK2HkBUC_4iOLkmq-SoQ'
+TOKEN_API = 'YOUR TOKEN'
 HELP_INFO = '''
 /start - начать работу с ботом
 /help - помощь
