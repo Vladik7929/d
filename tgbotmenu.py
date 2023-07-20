@@ -13,12 +13,12 @@ HELP_INFO = '''
 /open_menu - open the menu
 /help - help
 '''
-kb = ReplyKeyboardMarkup(resize_keyboard=True)
-b1 = KeyboardButton(text='/start', command='start')
-b2 = KeyboardButton(text='/help', command='help')
-b3 = KeyboardButton(text='/open_menu')
-b4 = KeyboardButton(text='You can not use the previous button because you are in menu ans you can not open it twice!')
-kb.add(b1, b2, b3, b4)
+menu = ReplyKeyboardMarkup(resize_keyboard=True)
+menu.add(KeyboardButton(text='/start', command= '/start'))
+menu.add(KeyboardButton(text='/help', command = '/help'))
+menu.add(KeyboardButton(text='/open_menu', callback_data='onemoremenuopeningwhilemenuisopened'))
+menu.add(KeyboardButton(text='ATTENTION, you can not open the menu while menu is opened'))
+
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     await bot.send_message(text='Bot had started', chat_id=message.from_user.id, reply_markup=ReplyKeyboardRemove())
